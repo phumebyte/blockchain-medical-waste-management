@@ -1,0 +1,97 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Medical Waste Management</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Medical Waste Exchange Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#list-waste">List Medical Waste</a></li>
+                <li><a href="#transaction-history">Transaction History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to the Medical Waste Exchange</h2>
+            <p>Connect with certified collectors and ensure compliant medical waste disposal via blockchain.</p>
+            <button id="listWasteBtn">List Medical Waste</button>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <h2>Your Medical Waste Listings</h2>
+            <div id="wasteTable">
+                <!-- Table dynamically populated with waste listings -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Waste Type</th>
+                            <th>Quantity</th>
+                            <th>Hazard Level</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="waste-list">
+                        <!-- Waste listings inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Waste Listing Form -->
+        <section id="list-waste">
+            <h2>List Your Medical Waste</h2>
+            <form id="wasteForm">
+                <label for="wasteType">Waste Type:</label>
+                <select id="wasteType">
+                    <option value="sharps">Sharps</option>
+                    <option value="biohazard">Biohazard</option>
+                    <option value="pharmaceuticals">Pharmaceuticals</option>
+                </select>
+
+                <label for="quantity">Quantity (kg):</label>
+                <input type="number" id="quantity" min="1" required>
+
+                <label for="hazardLevel">Hazard Level:</label>
+                <input type="text" id="hazardLevel" required>
+
+                <label for="certifications">Upload Certifications:</label>
+                <input type="file" id="certifications" accept="image/*,application/pdf" required>
+
+                <button type="submit">List Waste</button>
+            </form>
+        </section>
+
+        <!-- Transaction History -->
+        <section id="transaction-history">
+            <h2>Blockchain Transaction History</h2>
+            <div id="transactionLog">
+                <!-- Transaction logs will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
+    </footer>
+
+</body>
+</html>

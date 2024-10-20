@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,8 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="/blockchain-medical-waste-management/client/src/index.css">
+    <script src="/blockchain-medical-waste-management/client/src/index.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -18,8 +18,8 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#list-waste">List Medical Waste</a></li>
-                <li><a href="#transaction-history">Transaction History</a></li>
+                <li><a href="#listWaste">List Medical Waste</a></li>
+                <li><a href="#transactionHistory">Transaction History</a></li>
             </ul>
         </nav>
     </header>
@@ -48,7 +48,7 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="waste-list">
+                    <tbody id="wasteList">
                         <!-- Waste listings inserted here -->
                     </tbody>
                 </table>
@@ -56,31 +56,39 @@
         </section>
 
         <!-- Waste Listing Form -->
-        <section id="list-waste">
+        <section id="listWaste">
             <h2>List Your Medical Waste</h2>
             <form id="wasteForm">
-                <label for="wasteType">Waste Type:</label>
-                <select id="wasteType">
-                    <option value="sharps">Sharps</option>
-                    <option value="biohazard">Biohazard</option>
-                    <option value="pharmaceuticals">Pharmaceuticals</option>
-                </select>
+                <div class="form-group">
+                    <label for="wasteType">Waste Type:</label>
+                    <select id="wasteType" name="wasteType">
+                        <option value="sharps">Sharps</option>
+                        <option value="biohazard">Biohazard</option>
+                        <option value="pharmaceuticals">Pharmaceuticals</option>
+                    </select>
+                </div>
 
-                <label for="quantity">Quantity (kg):</label>
-                <input type="number" id="quantity" min="1" required>
+                <div class="form-group">
+                    <label for="quantity">Quantity (kg):</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </div>
 
-                <label for="hazardLevel">Hazard Level:</label>
-                <input type="text" id="hazardLevel" required>
+                <div class="form-group">
+                    <label for="hazardLevel">Hazard Level:</label>
+                    <input type="text" id="hazardLevel" name="hazardLevel" required>
+                </div>
 
-                <label for="certifications">Upload Certifications:</label>
-                <input type="file" id="certifications" accept="image/*,application/pdf" required>
+                <div class="form-group">
+                    <label for="certifications">Upload Certifications:</label>
+                    <input type="file" id="certifications" name="certifications" accept="image/*,application/pdf" required>
+                </div>
 
-                <button type="submit">List Waste</button>
+                <button type="submit" class="btn">List Waste</button>
             </form>
         </section>
 
         <!-- Transaction History -->
-        <section id="transaction-history">
+        <section id="transactionHistory">
             <h2>Blockchain Transaction History</h2>
             <div id="transactionLog">
                 <!-- Transaction logs will be displayed here -->
@@ -92,6 +100,5 @@
     <footer>
         <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
     </footer>
-
 </body>
 </html>

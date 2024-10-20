@@ -5,10 +5,11 @@ const wasteSchema = new mongoose.Schema({
     quantity: Number,
     hazardLevel: String,
     status: { type: String, default: 'Pending' },
-    blockchainMetadata: Array,  // Metadata for NFT
-    nftId: String,  // Token ID from blockchain
+    blockchainMetadata: Array,
+    nftId: String,
+    certificateIssued: { type: Boolean, default: false }  // Flag to indicate certificate issuance
 });
 
 const Waste = mongoose.model('Waste', wasteSchema);
 
-export default Waste;
+module.exports = Waste;

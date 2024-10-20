@@ -1,0 +1,11 @@
+{
+  "name": "Medical Waste: Sharps",
+  "description": "Disposal of 10 kg of Sharps",
+  "image": "https://example.com/image.jpg",
+  "attributes": [
+    { "trait_type": "Waste Type", "value": "Sharps" },
+    { "trait_type": "Quantity (kg)", "value": "10" },
+    { "trait_type": "Hazard Level", "value": "High" },
+    { "trait_type": "Status", "value": "Pending" }
+  ]
+}

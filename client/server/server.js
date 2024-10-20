@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import { Alchemy, Network } from 'alchemy-sdk';
 import dotenv from 'dotenv';
 import metadata from '../public/metadata.json';  // Import metadata.json
+import Waste from './wasteSchema.js';  // Import waste schema
 dotenv.config();
 
 // Initialize Express App
@@ -14,18 +15,6 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected')).catch(err => console.log(err));
-
-// Define the Medical Waste Schema
-const wasteSchema = new mongoose.Schema({
-  wasteType: String,
-  quantity: Number,
-  hazardLevel: String,
-  status: { type: String, default: 'Pending' },
-  nftId: String,  // Token ID for the NFT
-  blockchainMetadata: Array,
-});
-
-const Waste = mongoose.model('Waste', wasteSchema);
 
 // Initialize Alchemy API
 const alchemySettings = {
@@ -61,7 +50,7 @@ app.post('/mintNFT', async (req, res) => {
 
     // Use metadata from metadata.json
     const metadataForNFT = {
-      ...metadata,  // Use data from metadata.json
+      ...metadata,
       attributes: [
         { trait_type: 'Waste Type', value: waste.wasteType },
         { trait_type: 'Quantity (kg)', value: waste.quantity },
@@ -73,7 +62,7 @@ app.post('/mintNFT', async (req, res) => {
     // Mint NFT using Alchemy
     const response = await alchemy.nft.mintNft({
       chain: 'matic',
-      recipient: '0xRecipientAddress',  // Replace with actual wallet address
+      recipient: '0xRecipientAddress',
       metadata: metadataForNFT,
     });
 

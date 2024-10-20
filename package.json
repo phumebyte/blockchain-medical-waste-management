@@ -1,0 +1,19 @@
+{
+  "name": "blockchain-medical-waste-management",
+  "version": "1.0.0",
+  "description": "This project leverages blockchain technology to revolutionize the management of medical waste by enhancing transparency, traceability, and compliance. It aims to tackle key challenges such as improper waste disposal, fraud, and regulatory gaps, which pose risks to public health and the environment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2"
+  }
+}

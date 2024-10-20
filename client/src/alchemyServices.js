@@ -2,7 +2,7 @@
 import { Network, Alchemy } from 'alchemy-sdk';
 
 const settings = {
-  apiKey: "TqWYI7II2taa2f9z13Slvmt4rj3dKxrE",  // Your Alchemy API Key
+  apiKey: "",  // Your Alchemy API Key
   network: Network.MATIC_MAINNET,  // Choose network (e.g., ETH_MAINNET, MATIC_MAINNET)
 };
 

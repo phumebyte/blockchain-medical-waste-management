@@ -1,9 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { Alchemy, Network } from 'alchemy-sdk';
 import dotenv from 'dotenv';
-import metadata from '../public/metadata.json';  // Import metadata.json
-import Waste from './wasteSchema.js';  // Import waste schema
+import Waste from './wasteSchema.js';  // Import Mongoose schema
+
 dotenv.config();
 
 // Initialize Express App
@@ -14,24 +13,20 @@ app.use(express.json());
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected')).catch(err => console.log(err));
-
-// Initialize Alchemy API
-const alchemySettings = {
-  apiKey: process.env.ALCHEMY_API_KEY,
-  network: Network.MATIC_MAINNET,
-};
-const alchemy = new Alchemy(alchemySettings);
+}).then(() => console.log('MongoDB connected')
+).catch(err => console.log(err));
 
 // Route to Add New Waste Listing
 app.post('/addWaste', async (req, res) => {
-  const { wasteType, quantity, hazardLevel } = req.body;
+  const { wasteType, quantity, hazardLevel, certifications } = req.body;
 
   try {
     const newWaste = new Waste({
       wasteType,
       quantity,
       hazardLevel,
+      certifications,
+      status: 'Pending'
     });
     await newWaste.save();
     res.status(201).json({ message: 'Waste listed successfully' });
@@ -45,32 +40,11 @@ app.post('/mintNFT', async (req, res) => {
   const { wasteId } = req.body;
 
   try {
-    // Find the waste entry by ID
     const waste = await Waste.findById(wasteId);
-
-    // Use metadata from metadata.json
-    const metadataForNFT = {
-      ...metadata,
-      attributes: [
-        { trait_type: 'Waste Type', value: waste.wasteType },
-        { trait_type: 'Quantity (kg)', value: waste.quantity },
-        { trait_type: 'Hazard Level', value: waste.hazardLevel },
-        { trait_type: 'Status', value: waste.status },
-      ],
-    };
-
-    // Mint NFT using Alchemy
-    const response = await alchemy.nft.mintNft({
-      chain: 'matic',
-      recipient: '0xRecipientAddress',
-      metadata: metadataForNFT,
-    });
-
-    // Save NFT ID to the waste entry
-    waste.nftId = response.data.tokenId;
-    waste.blockchainMetadata = metadataForNFT.attributes;
+    // Mock logic to mint NFT (You would integrate the blockchain call here)
+    const nftData = { tokenId: 'nft-1234' };
+    waste.nftId = nftData.tokenId;
     await waste.save();
-
     res.status(200).json({ message: 'NFT minted successfully', nftId: waste.nftId });
   } catch (error) {
     res.status(500).json({ message: 'Error minting NFT', error });
@@ -78,6 +52,7 @@ app.post('/mintNFT', async (req, res) => {
 });
 
 // Start Server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

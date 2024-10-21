@@ -1,11 +1,33 @@
+/* root styling*/
+:root {
+    --primary-color: #FF6500;
+    --secondary-color: #6c757d;
+    --background-color: #e4e9ed;
+    --text-color: #dae2eb;
+    --border-color: #dee2e6;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Base */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+/* h2 styling */
+h2 {
+    color: #FF6500;
+    margin-bottom: 20px;
+}
+
+/* p styling */
+p {
+    color: #FF8A08;
+    margin-bottom: 20px;
 }
 
 /* Layout */
@@ -15,7 +37,7 @@ body, html {
     align-items: center;
     background-color: #282c34;
     padding: 20px;
-    color: white;
+    color: #FF6500;
 }
 
 .app-logo {

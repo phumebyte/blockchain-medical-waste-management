@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/tailwind/tailwind.min.css">
     <link rel="stylesheet" href="./assets/css/theme.css">
     <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
+    <link rel="stylesheet" href="/client/src/App.css">
 </head>
 
 <body class="bg-gray-100 text-gray-800"> 
@@ -35,9 +36,9 @@
         <!-- Home Section -->
         <section id="home" class="mb-12" >
             <div class="bg-white rounded-lg shadow-md p-8">
-            <h2 class="text-3xl font-bold mb-4">Welcome to the Medical Waste Exchange</h2>
+            <h2 style="color:#FF6500" class="text-3xl font-bold mb-4">Welcome to the Medical Waste Exchange</h2>
             <p  class="text-lg mb-6" >Connect with certified collectors and ensure compliant medical waste disposal via blockchain.</p>
-            <button id="listWasteBtn"  class="bg-green-900 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Medical Waste</button>
+            <button style="background-color:rgb(86, 223, 86)" id="listWasteBtn"  class="bg-green-900 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Medical Waste</button>
 
             </div>
             
@@ -46,7 +47,7 @@
         <!-- Dashboard Section -->
         <section id="dashboard" class="mb-12" >
             <div class="bg-white rounded-lg shadow-md p-8" >
-                <h2 class="text-2xl font-bold mb-6">Your Medical Waste Listings</h2>
+                <h2 style="color:#FF6500" class="text-2xl font-bold mb-6">Your Medical Waste Listings</h2>
                 <div id="wasteTable" class="overflow-x-auto">
                     <!-- Table dynamically populated with waste listings -->
                     <table>
@@ -71,7 +72,7 @@
 
         <!-- Waste Listing Form -->
         <section id="listWaste" class="mb-12" >
-            <h2 class="text-2xl font-bold mb-6" >List Your Medical Waste</h2>
+            <h2 style="color:#FF6500" class="text-2xl font-bold mb-6" >List Your Medical Waste</h2>
             <form id="wasteForm"  class="space-y-4">
                 <div id="form-group">
                     <label for="wasteType">Waste Type:</label>
@@ -97,14 +98,14 @@
                     <input type="file" id="certifications" name="certifications" accept="image/*,application/pdf" required>
                 </div>
 
-                <button type="submit" id="btn" class="bg-green-950 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Waste</button>
+                <button style="background-color:rgb(86, 223, 86)" type="submit" id="btn" class="bg-green-950 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Waste</button>
             </form>
         </section>
 
         <!-- Transaction History -->
         <section id="transactionHistory" >
             <div>
-                <h2>Blockchain Transaction History</h2>
+                <h2 style="color:#FF6500">Blockchain Transaction History</h2>
             <div id="transactionLog">
                 <!-- Transaction logs will be displayed here -->
             </div>
@@ -115,7 +116,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
+    <footer style="background-color:#FF6500" class=" text-white py-6">
         <div class="container mx-auto px-4 text-center" >
             <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
 

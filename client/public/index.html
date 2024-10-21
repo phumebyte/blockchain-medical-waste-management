@@ -1,65 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockchain Medical Waste Management</title>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="/blockchain-medical-waste-management/client/src/App.css">
-    <script src="/blockchain-medical-waste-management/client/src/index.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cache Bank Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/css/leaflet.css">
+    <link rel="stylesheet" href="./assets/css/tailwind/tailwind.min.css">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1>Medical Waste Exchange Platform</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#listWaste">List Medical Waste</a></li>
-                <li><a href="#transactionHistory">Transaction History</a></li>
-            </ul>
-        </nav>
+
+<body class="bg-gray-100 text-gray-800"> 
+     <!-- Header -->
+     <header >
+        <div class="container mx-auto px-4 py-6" >
+            <nav class="flex justify-between items-center" >
+                
+                <ul class=" flex flex-wrap items-center justify-between w-full flex-shrink-0 ">
+                    <li><a href="#home"  class="hover:text-teal-200 transition" >Home</a></li>
+                    <li><a href="#dashboard"  class="hover:text-teal-200 transition">Dashboard</a></li>
+                    <li><a href="#listWaste"  class="hover:text-teal-200 transition">List Medical Waste</a></li>
+                    <li><a href="#transactionHistory"  class="hover:text-teal-200 transition">Transaction History</a></li>
+                </ul>
+            </nav>
+            <h1  class="text-2xl font-bold" > Medical Waste Exchange</h1>
+        </div>
+        
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="container mx-auto px-4 py-8">
         <!-- Home Section -->
-        <section id="home">
-            <h2>Welcome to the Medical Waste Exchange</h2>
-            <p>Connect with certified collectors and ensure compliant medical waste disposal via blockchain.</p>
-            <button id="listWasteBtn">List Medical Waste</button>
+        <section id="home" class="mb-12" >
+            <div class="bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-bold mb-4">Welcome to the Medical Waste Exchange</h2>
+            <p  class="text-lg mb-6" >Connect with certified collectors and ensure compliant medical waste disposal via blockchain.</p>
+            <button id="listWasteBtn"  class="bg-green-900 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Medical Waste</button>
+
+            </div>
+            
         </section>
 
         <!-- Dashboard Section -->
-        <section id="dashboard">
-            <h2>Your Medical Waste Listings</h2>
-            <div id="wasteTable">
-                <!-- Table dynamically populated with waste listings -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Waste Type</th>
-                            <th>Quantity</th>
-                            <th>Hazard Level</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="wasteList">
-                        <!-- Waste listings inserted here -->
-                    </tbody>
-                </table>
+        <section id="dashboard" class="mb-12" >
+            <div class="bg-white rounded-lg shadow-md p-8" >
+                <h2 class="text-2xl font-bold mb-6">Your Medical Waste Listings</h2>
+                <div id="wasteTable" class="overflow-x-auto">
+                    <!-- Table dynamically populated with waste listings -->
+                    <table>
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th  class="p-3 border-b">Waste Type</th>
+                                <th  class="p-3 border-b">Quantity</th>
+                                <th  class="p-3 border-b">Hazard Level</th>
+                                <th  class="p-3 border-b">Status</th>
+                                <th  class="p-3 border-b">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wasteList">
+                            <!-- Waste listings inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
+           
         </section>
 
         <!-- Waste Listing Form -->
-        <section id="listWaste">
-            <h2>List Your Medical Waste</h2>
-            <form id="wasteForm">
-                <div class="form-group">
+        <section id="listWaste" class="mb-12" >
+            <h2 class="text-2xl font-bold mb-6" >List Your Medical Waste</h2>
+            <form id="wasteForm"  class="space-y-4">
+                <div id="form-group">
                     <label for="wasteType">Waste Type:</label>
                     <select id="wasteType" name="wasteType">
                         <option value="sharps">Sharps</option>
@@ -69,36 +83,52 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="quantity">Quantity (kg):</label>
+                    <label for="quantity" class="mb-2">Quantity (kg):</label>
                     <input type="number" id="quantity" name="quantity" min="1" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="hazardLevel">Hazard Level:</label>
+                    <label for="hazardLevel" class="mb-2">Hazard Level:</label>
                     <input type="text" id="hazardLevel" name="hazardLevel" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="certifications">Upload Certifications:</label>
+                    <label for="certifications" class="mb-2">Upload Certifications:</label>
                     <input type="file" id="certifications" name="certifications" accept="image/*,application/pdf" required>
                 </div>
 
-                <button type="submit" class="btn">List Waste</button>
+                <button type="submit" id="btn" class="bg-green-950 text-white px-6 py-2 rounded hover:bg-teal-700 transition" >List Waste</button>
             </form>
         </section>
 
         <!-- Transaction History -->
-        <section id="transactionHistory">
-            <h2>Blockchain Transaction History</h2>
+        <section id="transactionHistory" >
+            <div>
+                <h2>Blockchain Transaction History</h2>
             <div id="transactionLog">
                 <!-- Transaction logs will be displayed here -->
             </div>
+
+            </div>
+            
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center" >
+            <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
+
+        </div>
+       
     </footer>
+
+
+    </script>
+    <script src="https:kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/countto.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
+    <script src="./assets/js/loopple/loopple.js"></script>
 </body>
-</html>

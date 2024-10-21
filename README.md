@@ -53,6 +53,14 @@ The chosen colour palette consists of orange shades and pops of green for button
 
 Let Us Know What You Think!
 
+## Tech Stack Used
+We are building our blockchain medical waste management system using the MERN stack—MongoDB, Express.js, React, and Node.js—because it’s a flexible, scalable, and beginner-friendly technology stack. Here’s a quick summary of the benefits:
+
+- **JavaScript Everywhere**: Both the frontend and backend are in JavaScript, simplifying development and speeding up our learning process. 
+- **MongoDB for Storage**: A NoSQL database that easily stores and manages complex data like waste tracking logs and blockchain entries.
+- **Express.js & Node.js for Backend**: These ensure fast API development and smooth handling of multiple operations, such as scanning and logging waste transactions.
+- **React for UI**: React helps us create responsive, reusable components, making the app intuitive and easy to use.
+
 ## Competitor Analysis
 Our solution bridges the gap between research and real-world application. We offer a fully functional, scalable web app that uses blockchain to track waste across the entire lifecycle. In addition to tracking and compliance, we introduce real-time scan data logging, and smart contracts to distribute token incentives. Our platform is cost-effective and adaptable for healthcare facilities of all sizes, setting it apart from competitors by focusing on usability, sustainability, and practical deployment. Here are some of our research based competitors: 
 1. IBM Blockchain Solutions

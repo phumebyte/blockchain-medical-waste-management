@@ -17,16 +17,65 @@
      <!-- Header -->
      <header >
         <div class="container mx-auto px-4 py-6" >
-            <nav class="flex justify-between items-center" >
+            <div class="relative flex flex-wrap items-center justify-between w-full shrink-0">
+                <div class="px-4">  <!--MediWastWatch logo-->
+                  <img class="h-10" src="/client/src/MediWasteWatch (1).png" />
+                </div>
+            <nav class="hidden md:flex justify-between items-center " >
                 
-                <ul class=" flex flex-wrap items-center justify-between w-full flex-shrink-0 ">
+                <ul class=" flex flex-wrap items-center justify-between w-full flex-shrink-0 gap-9 ">
                     <li><a href="#home"  class="hover:text-teal-200 transition" >Home</a></li>
                     <li><a href="#dashboard"  class="hover:text-teal-200 transition">Dashboard</a></li>
                     <li><a href="#listWaste"  class="hover:text-teal-200 transition">List Medical Waste</a></li>
                     <li><a href="#transactionHistory"  class="hover:text-teal-200 transition">Transaction History</a></li>
                 </ul>
             </nav>
-            <h1  class="text-2xl font-bold" > Medical Waste Exchange</h1>
+            <div class="hidden gap-8 p-4 items-center md:flex"> <!--Log In & Sign Up Buttons-->
+                <button class="text-sm font-normal text-dark-grey-800 hover:text-dark-grey-900">Log In</button>
+                <button style="background-color: #FF6500" class="px-4 py-2 text-sm font-bold text-white rounded-xl hover:bg-green-400">Sign Up</button>
+              </div>
+            <button class="p-4 md:hidden" id="mobile-menu-toggle"> <!--Hamburger Menu-->
+                <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="h-6 w-6"
+                fill="none"
+                >
+                <g clip-path="url(#clip0_429_11066)">
+                  <path
+                    d="M3 6.00092H21M3 12.0009H21M3 18.0009H21"
+                    stroke="#292929"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_429_11066">
+                    <rect
+                      width="24"
+                      height="24"
+                      fill="white"
+                      transform="translate(0 0.000915527)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              </button>
+               <!--Mobile View-->
+             <div class="absolute hidden md:hidden flex md:flex flex-col items-start justify-center w-full gap-3 overflow-hidden bg-dark-grey-100 z-10
+              max-h-screen top-full px-4 py-8 shadow-main" id="mobile-menu">
+             <ul class="flex flex-col items-start justify-center w-full gap-3 overflow-hidden bg-dark-grey-100">
+                <li><a href="#home"  class="hover:text-teal-200 transition">Home</a></li>
+                <li><a href="#dashboard"  class="hover:text-teal-200 transition">Dashboard</a></li>
+                <li><a href="#listWaste"  class="hover:text-teal-200 transition">List Medical Waste</a></li>
+                <li><a href="#transactionHistory"  class="hover:text-teal-200 transition">Transaction History</a></li>
+             </ul>
+             <button class="text-sm font-normal text-dark-grey-800 hover:text-dark-grey-900">Log In</button>
+             <button style="background-color: #FF6500" class="px-4 py-2 text-sm font-bold text-white rounded-xl hover:bg-green-400">Sign Up</button>
+             </div>
+
         </div>
         
     </header>
@@ -118,12 +167,17 @@
     <!-- Footer -->
     <footer style="background-color:#FF6500" class=" text-white py-6">
         <div class="container mx-auto px-4 text-center" >
-            <p>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</p>
+            <h3>&copy; 2024 Medical Waste Exchange. Powered by Blockchain.</h3>
 
         </div>
        
     </footer>
 
+    <script>
+        document.getElementById("mobile-menu-toggle").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+      </script>
 
     </script>
     <script src="https:kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>

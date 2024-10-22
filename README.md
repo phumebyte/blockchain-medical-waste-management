@@ -79,3 +79,4 @@ Our solution bridges the gap between research and real-world application. We off
 
 ## Conclusion
 As global medical waste generation continues to increase, the adoption of blockchain technology offers a promising solution to the challenges of inefficiency, compliance, and safety in medical waste management. The transparency, traceability, and automation capabilities of blockchain can help healthcare facilities streamline waste disposal processes, enhance compliance with regulations, and promote sustainable practices. By doing so, blockchain could revolutionise how we handle medical waste, protecting both the public and the environment.
+ figma link :https://www.figma.com/design/C3K1rMt0jdCLhxfMNuGeax/Untitled?node-id=0-1&node-type=canvas&t=58oZKv1vYSggAkF3-0
